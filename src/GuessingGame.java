@@ -6,9 +6,10 @@ public class GuessingGame {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("|------------------------------------|");
-        System.out.println("| ⚜️ Welcome to the Guessing Game ⚜️ |");
-        System.out.println("|------------------------------------|");
+        System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
+        System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "| ⚜️ Welcome to the Guessing Game ⚜️ |" + ColorStyle.Color.reset + ColorStyle.Style.reset);
+        System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
+
 
         while (true) {
             int mode = -1;
@@ -23,17 +24,15 @@ public class GuessingGame {
                 System.out.println("4. Win twice and receive 1k Mode");
                 System.out.print("Enter MODE: ");
 
-                try {
+               
                     mode = scanner.nextInt();
                     if (mode >= 0 && mode <= 4) {
                         validInput = true;
                     } else {
                         System.out.println("Invalid mode. Please enter a number between 0 and 4.");
+                        scanner.next();
                     }
-                } catch (InputMismatchException e) {
-                    System.out.println("Invalid input. Please enter a number between 0 and 4.");
-                    scanner.next();
-                }
+              
             }
 
             int range = 0;
@@ -94,7 +93,7 @@ public class GuessingGame {
 
             if (tries == 0) {
                 System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
-                System.out.println(" You lose 😭 The number was " + number + ".");
+                System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
 
             }
