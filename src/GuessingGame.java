@@ -20,14 +20,16 @@ public class GuessingGame {
                 System.out.println("2. HARD");
                 System.out.println("3. SUPER HARD");
                 System.out.println("4. Win twice and receive 1k Mode");
-                System.out.print("Enter MODE: ");
+                System.out.println("5. View History");
+                System.out.println("6. Delete history");
+                System.out.print("ENTER MODE: ");
 
                
                     mode = scanner.nextInt();
-                    if (mode >= 0 && mode <= 4) {
+                    if (mode >= 0 && mode <= 5) {
                         validInput = true;
                     } else {
-                        System.out.println("Invalid mode. Please enter a number between 0 and 4.");
+                        System.out.println("Invalid mode. Please enter a number between 0 and 5.");
                         scanner.next();
                     }
               
@@ -57,6 +59,15 @@ public class GuessingGame {
                     System.out.println("😎 Win twice in a row and receive 5k Mode 😎");
                     range = 1000;
                     break;
+                case 5:
+                    History.viewHistory();
+                    continue;
+                case 6:
+                    History.deleteHistory();
+                    continue;
+                default:
+                    System.out.println("Invalid mode. Please enter a number between 0 and 5.");
+                    continue;
             }
 
             int number = (int) (Math.random() * range);
@@ -90,6 +101,7 @@ public class GuessingGame {
             }
 
             if (tries == 0) {
+                History.saveHistory();
                 System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
                 System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was 📢 " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
