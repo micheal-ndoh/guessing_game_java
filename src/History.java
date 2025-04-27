@@ -1,3 +1,11 @@
+import java.io.BufferedReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class History {
 
 
@@ -26,6 +34,7 @@ public class History {
         try {
             Files.delete(Paths.get(HISTORY_FILE_NAME));
         } catch (IOException e) {
+            
             System.err.println("Error deleting file: " + e.getMessage());
         }
     }
