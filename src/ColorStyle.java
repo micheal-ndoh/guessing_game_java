@@ -6,6 +6,8 @@ public class ColorStyle {
         static String red = "\u001B[31m";
         static String green = "\u001B[32m";
         static String blue = "\u001B[34m";
+        static String yellow = "\u001B[33m";
+        static String purple = "\u001B[35m";
         static String reset = "\u001B[0m";
 
     }
