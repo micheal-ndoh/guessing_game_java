@@ -3,6 +3,7 @@ FROM openjdk:17-slim as builder
 WORKDIR /usr/src/app
 
 COPY . .
+COPY . /usr/src/app
 
 RUN javac src/GuessingGame.java -d out
 
