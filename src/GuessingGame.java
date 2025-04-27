@@ -1,5 +1,3 @@
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GuessingGame {
@@ -40,23 +38,23 @@ public class GuessingGame {
 
             switch (mode) {
                 case 0:
-                    System.out.println("😃EASY MODE😃");
+                    System.out.println("😃 EASY MODE 😃");
                     range = 10;
                     break;
                 case 1:
-                    System.out.println("NORMAL MODE");
+                    System.out.println("☺️ NORMAL MODE ☺️");
                     range = 50;
                     break;
                 case 2:
-                    System.out.println("HARD MODE");
+                    System.out.println("🥲 HARD MODE 🥲");
                     range = 100;
                     break;
                 case 3:
-                    System.out.println("SUPER HARD MODE");
+                    System.out.println("🍀 SUPER HARD MODE 🍀");
                     range = 500;
                     break;
                 case 4:
-                    System.out.println("Win twice in a row and receive 5k Mode");
+                    System.out.println("😎 Win twice in a row and receive 5k Mode 😎");
                     range = 1000;
                     break;
             }
@@ -72,7 +70,7 @@ public class GuessingGame {
                 if (guess == number) {
 
                     System.out.println("\n🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
-                    System.out.println("🎋  You won ☺️🎉 you recieve a star ⭐ 🎋");
+                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.green + "🎋  You won ☺️🎉 you recieve a star ⭐ 🎋" + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
                     break;
                 } else if (guess < number) {
@@ -92,9 +90,9 @@ public class GuessingGame {
             }
 
             if (tries == 0) {
-                System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
-                System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
-                System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
+                System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
+                System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was 📢 " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
+                System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
 
             }
             System.out.println("\n🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆");
