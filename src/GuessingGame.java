@@ -78,17 +78,17 @@ public class GuessingGame {
                     break;
                 } else if (guess < number) {
                     System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
-                    System.out.println("You missed, The random number is greater than " + guess + ".");
+                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.red + "You missed, The random number is greater than " + guess + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                 } else {
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
-                    System.out.println("You missed!The random number is lesser than " + guess + ".");
+                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.red + "You missed!The random number is lesser than " + guess + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                 }
 
                 tries--;
                 if (tries > 0) {
-                    System.out.println("You have " + tries + " tries left. Please try again!");
+                    System.out.println(ColorStyle.Style.bold + ColorStyle.Color.blue + "You have " + tries + " 😢 tries left. Please try again!" + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 }
             }
 
