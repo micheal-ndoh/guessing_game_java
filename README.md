@@ -17,6 +17,18 @@ A simple terminal based guessing game written in Java.
 * SUPER HARD: Range is 100.
 * Win twice and receive 1k Mode: Range is 1000. If you win twice in a row, you will receive 1k.
 
-## Running the Game
+## Running the Game locally
 
 To run the game, compile the `GuessingGame.java` file and run the resulting `GuessingGame` class.
+
+## Running the Game in Docker
+
+To run the game in Docker,pull the Docker image and run the container.
+
+```bash
+# Pull the Docker image
+docker pull ghcr.io/micheal-ndoh/guessing_game_java:slim
+
+# And run the container
+docker run -it ghcr.io/micheal-ndoh/guessing_game_java:slim
+```    
