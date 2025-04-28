@@ -6,11 +6,11 @@ public class GuessingGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
-        System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "| ⚜️ Welcome to the Guessing Game ⚜️ |" + ColorStyle.Color.reset + ColorStyle.Style.reset);
+        System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "| ⚜️ Welcome to the Guessing Game ⚜️   |" + ColorStyle.Color.reset + ColorStyle.Style.reset);
         System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
 
         while (true) {
-            int mode = -1;
+            int mode = 0;
             boolean validInput = false;
 
             while (!validInput) {
