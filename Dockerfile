@@ -1,6 +1,7 @@
 FROM eclipse-temurin:17-jdk-alpine as builder
 
 WORKDIR /usr/src/app
+COPY . .
 
 COPY src/ ./src/
 
