@@ -1,12 +1,12 @@
-FROM openjdk:17-slim as builder
+FROM eclipse-temurin:17-jdk-alpine as builder
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY src/ ./src/
 
 RUN javac src/*.java -d out
 
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /usr/src/app
 
