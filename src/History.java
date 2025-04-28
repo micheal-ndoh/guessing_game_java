@@ -1,18 +1,32 @@
+
 import java.io.BufferedReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class History {
 
-    private static final String HISTORY_FILE = "history.txt";
+    private static String HISTORY_FILE = "history.txt";
 
-    public static void saveHistory(String history) {
+    public static void saveHistory(String history, boolean isWin, int number, int tries) {
+        try {
+            Files.createFile(Paths.get(HISTORY_FILE));
+        } catch (IOException e) {
+            System.err.println("Error saving history" + e.getMessage());
+        }
+
+        String HistoryFormat;
+        if (isWin) {
+            HistoryFormat = "You won in " + tries + " tries. The number was " + number + ".";
+        } else {
+            HistoryFormat = "You lost. The number was " + number + ".";
+        }
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(HISTORY_FILE, true))) {
-            bw.write(history + "\n");
+            bw.write(HistoryFormat + "\n");
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }
@@ -37,4 +51,5 @@ public class History {
             System.err.println("Error deleting file: " + e.getMessage());
         }
     }
+
 }
