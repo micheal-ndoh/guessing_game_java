@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class GuessingGame {
@@ -7,7 +8,6 @@ public class GuessingGame {
         System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
         System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "| ⚜️ Welcome to the Guessing Game ⚜️ |" + ColorStyle.Color.reset + ColorStyle.Style.reset);
         System.out.println(ColorStyle.Style.bold + ColorStyle.Color.purple + "|------------------------------------|" + ColorStyle.Color.reset + ColorStyle.Style.reset);
-
 
         while (true) {
             int mode = -1;
@@ -24,15 +24,14 @@ public class GuessingGame {
                 System.out.println("6. Delete history");
                 System.out.print("ENTER MODE: ");
 
-               
-                    mode = scanner.nextInt();
-                    if (mode >= 0 && mode <= 5) {
-                        validInput = true;
-                    } else {
-                        System.out.println("Invalid mode. Please enter a number between 0 and 5.");
-                        scanner.next();
-                    }
-              
+                mode = scanner.nextInt();
+                if (mode >= 0 && mode <= 6) {
+                    validInput = true;
+                } else {
+                    System.out.println("Invalid mode. Please enter a number between 0 and 6.");
+                    scanner.next();
+                }
+
             }
 
             int range = 0;
@@ -83,13 +82,14 @@ public class GuessingGame {
                     System.out.println("\n🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
                     System.out.println(ColorStyle.Style.bold + ColorStyle.Color.green + "🎋  You won ☺️🎉 you recieve a star ⭐ 🎋" + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋🎋");
+                    History.saveHistory("You won in " + (3 - tries + 1) + " tries. The number was " + number + ".", true, number, 3 - tries + 1);
                     break;
                 } else if (guess < number) {
                     System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                     System.out.println(ColorStyle.Style.bold + ColorStyle.Color.red + "You missed, The random number is greater than " + guess + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                 } else {
-                    System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
+                    System.out.println("\n🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                     System.out.println(ColorStyle.Style.bold + ColorStyle.Color.red + "You missed!The random number is lesser than " + guess + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                     System.out.println("🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥");
                 }
@@ -101,10 +101,10 @@ public class GuessingGame {
             }
 
             if (tries == 0) {
-                History.saveHistory();
-                System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
+                System.out.println("\n🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
                 System.out.println(ColorStyle.Style.bold + ColorStyle.Color.yellow + " You lose 😭 The number was 📢 " + number + "." + ColorStyle.Color.reset + ColorStyle.Style.reset);
                 System.out.println("🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁🍁");
+                History.saveHistory("You lost. The number was " + number + ".", false, number, 3);
 
             }
             System.out.println("\n🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆🎆");
