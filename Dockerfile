@@ -3,6 +3,8 @@ FROM eclipse-temurin:17-jdk-alpine as builder
 WORKDIR /usr/src/app
 COPY . .
 
+COPY bin/*.class .
+
 COPY src/ ./src/
 
 RUN javac src/*.java -d out
