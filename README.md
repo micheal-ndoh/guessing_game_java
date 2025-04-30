@@ -30,5 +30,5 @@ To run the game in Docker,pull the Docker image and run the container.
 docker pull ghcr.io/micheal-ndoh/guessing_game_java:slim
 
 # And run the container
-docker run -it ghcr.io/micheal-ndoh/guessing_game_java:slim
+docker run -it -v $(pwd)/data:/usr/src/app/data ghcr.io/micheal-ndoh/guessing_game_java:slim
 ```    
