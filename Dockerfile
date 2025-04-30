@@ -1,18 +1,20 @@
-FROM eclipse-temurin:17-jdk-alpine as builder
+ARG JAVA_VERSION=21
+FROM eclipse-temurin:${JAVA_VERSION}-jdk-alpine as builder
 
-WORKDIR /usr/src/app
-COPY . .
-
-COPY bin/*.class .
+WORKDIR /app
 
 COPY src/ ./src/
+COPY MANIFEST.MF ./MANIFEST.MF
 
-RUN javac src/*.java -d out
+RUN mkdir bin
+RUN javac -d bin $(find src -name "*.java")
 
-FROM eclipse-temurin:17-jre-alpine
+RUN jar cfm GuessingGame.jar [MANIFEST.MF](http://_vscodecontentref_/4) -C bin .
 
-WORKDIR /usr/src/app
+FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
-COPY --from=builder /usr/src/app/out /usr/src/app
+WORKDIR /app
 
-CMD ["java", "GuessingGame"]
+COPY --from=builder /app/GuessingGame.jar /app/GuessingGame.jar
+
+CMD ["java", "-jar", "/app/GuessingGame.jar"]
