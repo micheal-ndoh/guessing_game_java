@@ -9,7 +9,7 @@ COPY MANIFEST.MF ./MANIFEST.MF
 RUN mkdir bin
 RUN javac -d bin $(find src -name "*.java")
 
-RUN jar cfm GuessingGame.jar [MANIFEST.MF](http://_vscodecontentref_/4) -C bin .
+RUN jar cfm GuessingGame.jar MANIFEST.MF -C bin .
 
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
