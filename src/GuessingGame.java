@@ -14,7 +14,9 @@ public class GuessingGame {
             boolean validInput = false;
 
             while (!validInput) {
-                System.out.println("\nSelect a mode:");
+                System.out.println("\n|-----------------------------------------------|");
+                System.out.println("|            Select a mode:                     |");
+                System.out.println("|-----------------------------------------------|");
                 System.out.println("0. EASY");
                 System.out.println("1. NORMAL");
                 System.out.println("2. HARD");
